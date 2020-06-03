@@ -1,0 +1,53 @@
+package com.myweb.controller;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.myweb.user.service.UserService;
+import com.myweb.user.service.JoinServiceImpl;
+
+@WebServlet("*.user")
+public class UserController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    public UserController() {
+        super();
+    }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		doAction(request,response);
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//doGet(request, response);
+		doAction(request,response);
+	}
+	protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		String uri=request.getRequestURI();
+		String path=request.getContextPath();
+		String command=uri.substring(path.length());
+		System.out.println(command);
+		UserService service=null;
+		if(command.equals("/user/join.user")) {//조인화면 이동
+			request.getRequestDispatcher("user_join.jsp").forward(request,response);
+		}else if(command.equals("/user/joinForm.user")) {//회원가입 처리 메서드
+			service=new JoinServiceImpl();
+			int result=service.execute(request,response);
+			if(result==1) {//이미 존재하는 회원인 경우
+				response.setContentType("text/html;charset=UTF-8");
+				PrintWriter out=response.getWriter();
+				out.println("<script>");
+				out.println("alert('이미 존재하는 회원입니다.')");
+				out.println("location.href='user_join.jsp'");
+				out.println("</script>");
+			}else {//회원가입 성공인 경우
+				//request.getRequestDispatcher("user_join.jsp").forward(request,response);
+			}
+		}
+	}
+}

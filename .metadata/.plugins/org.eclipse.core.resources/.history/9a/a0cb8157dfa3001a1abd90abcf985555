@@ -1,0 +1,31 @@
+package user.service;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class JoinServiceImpl implements UserService{
+
+	@Override
+	public int execute(HttpServletRequest request, HttpServletResponse response) {
+		String id=request.getParameter("id");
+		String password=request.getParameter("password");
+		String name=request.getParameter("name");
+		String hp1=request.getParameter("hp1");
+		String hp2=request.getParameter("hp2");
+		String hp3=request.getParameter("hp3");
+		String email1=request.getParameter("email1");
+		String email2=request.getParameter("email2");
+		String addbasic=request.getParameter("addr-basic");
+		String adddetail=request.getParameter("addr-detail");
+		UserDAO dao=UserDAO.getInstance();
+		int result=dao.checkId(id);
+		if(result==1) {//이미 존재하는 경우
+			return 1;
+		}else {//중복이 없는 경우
+			UserVO vo=new UserVO(id,pw,name,email,address,null);
+			dao.insert(vo);
+			return 0;
+		}
+	}
+	
+}

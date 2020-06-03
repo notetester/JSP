@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.myweb.board.service;
+
+/**
+ * @author YI
+ *
+ */
+public interface GetListServiceImpl {
+
+}

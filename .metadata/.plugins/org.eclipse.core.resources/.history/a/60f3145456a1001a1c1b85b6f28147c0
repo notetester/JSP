@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package com.myweb.util;
+
+/**
+ * @author YI
+ *
+ */
+public class PageVO {
+
+	/**
+	 * 
+	 */
+	public PageVO() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

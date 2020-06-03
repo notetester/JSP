@@ -1,0 +1,27 @@
+/**
+ * 
+ */
+package com.myweb.board.model;
+
+/**
+ * @author YI
+ *
+ */
+public class BoardVO {
+
+	/**
+	 * 
+	 */
+	public BoardVO() {
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

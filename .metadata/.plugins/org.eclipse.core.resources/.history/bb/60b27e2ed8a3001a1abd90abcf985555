@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package user.service;
+
+/**
+ * @author YI
+ *
+ */
+public interface UserService {
+
+}

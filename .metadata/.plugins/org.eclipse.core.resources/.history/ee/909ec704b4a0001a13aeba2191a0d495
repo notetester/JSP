@@ -1,0 +1,62 @@
+package com.myweb.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.myweb.board.service.BoardService;
+import com.myweb.board.service.ContentServiceImpl;
+import com.myweb.board.service.GetListServiceImpl;
+import com.myweb.board.service.RegistServiceImpl;
+
+@WebServlet("*.board")
+public class BoardController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+    public BoardController() {
+        super();
+    }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		doAction(request, response);
+	}
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//doGet(request, response);
+		doAction(request, response);
+	}
+	protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("UTF-8");
+		String uri=request.getRequestURI();//URI정보
+		String path=request.getContextPath();//컨택스트 패스 정보
+		String command=uri.substring(path.length());
+		System.out.println(command);
+		BoardService service=null;
+		if(command.equals("/board/list.board")) {//게시글 목록 요청(목록 요청이 들어올 때 게시글 정보를 가지고 화면으로 가도록 처리)
+			service=new GetListServiceImpl();
+			service.execute(request, response);
+			request.getRequestDispatcher("board_list.jsp").forward(request, response);
+		}else if(command.equals("/board/write.board")) {//글쓰기 화면 요청
+			request.getRequestDispatcher("board_write.jsp").forward(request, response);
+		}else if(command.equals("/board/regist.board")) {//글 등록 요청
+			service=new RegistServiceImpl();
+			service.execute(request, response);
+			response.sendRedirect("list.board");
+		}else if(command.equals("/board/content.board")) {//상세 보기 화면 요청
+			service=new ContentServiceImpl();
+			service.execute(request, response);
+			request.getRequestDispatcher("board_content.jsp").forward(request, response);
+		}else if(command.equals("/board/modify.board")) {//수정 화면 요청
+			/*
+			 * 0. 화면에서 경로에 bno값을 전달합니다.
+			 * 1. ContentServiceImpl() 서비스를 재활용
+			 * 2. 포워드로 board_modify.jsp로 이동
+			 * 3. 화면에서는 태그 안에 데이터 값을 출력
+			 */
+			service=new ContentServiceImpl();
+			service.execute(request, response);
+			request.getRequestDispatcher("board_modify.jsp").forward(request, response);
+		}
+	}
+}
