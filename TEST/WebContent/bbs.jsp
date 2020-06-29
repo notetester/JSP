@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/custom.css">
-        <title>BBS Test</title>
+        <title>게시판</title>
         
         <!--게시판만 적용되는 css-->            
         <style>

@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/custom.css">
 
-        <title>BBS Test</title>
+        <title>게시글 수정</title>
 
 </head>
 <body>
@@ -18,7 +18,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-10 col-sm-12 join-form">
-                    <h2>게시판 수정<small>(디자인이궁금하세요?)</small></h2>
+                    <h2>게시판 수정</h2>
 
                     <form action="update.board" method="post" name="updateboard" id="updateboard">
                         <div class="form-group">

@@ -1,4 +1,5 @@
 #Tomcat publish data
-#Wed Jun 03 10:12:37 KST 2020
+#Mon Jun 29 15:18:52 KST 2020
 org.eclipse.jst.jee.server\:MyWeb=D\:\\course\\JSP\\apache-tomcat-9.0.35\\wtpwebapps\\MyWeb
 org.eclipse.jst.jee.server\:TEST=D\:\\course\\JSP\\apache-tomcat-9.0.35\\wtpwebapps\\TEST
+org.eclipse.jst.jee.server\:AJAX=D\:\\course\\JSP\\apache-tomcat-9.0.35\\wtpwebapps\\AJAX

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/custom.css">
-    
+    <title>회원정보수정</title>
 </head>
 <body>
 <%@ include file="/include/header.jsp" %>
@@ -72,8 +72,8 @@
                     </table>
                     
                     <div class="titlefoot">
-                        <button class="btn" onclick="check()">수정</button>
-                        <button class="btn" onclick="location.href='mypage.user'">목록</button>
+                        <button class="btn" type="button" onclick="check()">수정</button>
+                        <button class="btn" type="button" onclick="location.href='mypage.user'">목록</button>
                     </div>
                     </form>
                 </div>

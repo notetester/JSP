@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/custom.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <title>BBS Test</title>
+    <title>회원가입</title>
     
     
     <!--회원가입 폼만 적용되는 css-->
@@ -45,7 +45,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-9 col-sm-12 join-form">
-                    <h2>회원가입<small>(가운데정렬)</small></h2>
+                    <h2>회원가입</h2>
 
                     <form action="joinForm.user" method="post" name="joinForm" id="joinForm">
                         <div class="form-group">

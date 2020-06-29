@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/custom.css">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <title>BBS Test</title>
+    <title>로그인</title>
     
     <!--login만 적용되는 css-->   
     <style>
@@ -35,7 +35,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-9 col-sm-12 join-form">
-                    <h2>로그인<small>(가운데정렬)</small></h2>
+                    <h2>로그인</h2>
                     
                     
                     <form action="loginForm.user" method="post" name="login_form" id="login_form">
