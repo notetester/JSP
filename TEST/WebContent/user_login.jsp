@@ -12,7 +12,8 @@
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <title>로그인</title>
-    
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+  	<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <!--login만 적용되는 css-->   
     <style>
         .table-striped>tbody>tr {
@@ -56,6 +57,7 @@
                             <button type="button" class="btn btn-lg btn-info btn-block" onclick="check()">로그인</button>
                         </div>
                     </form>
+                    <div id="naver_id_login"></div>
                 </div>
             </div>
         </div>
@@ -79,6 +81,15 @@
 		}
 	
 	</script>
+	<script type="text/javascript">
+	  	var naver_id_login = new naver_id_login("tJrgytD7CI8ruecZJb6h", "http://118.130.22.161:8181/TEST/callback.html");
+	  	var state = naver_id_login.getUniqState();
+	  	naver_id_login.setButton("white", 2,40);
+	  	naver_id_login.setDomain("http://118.130.22.161:8181");
+	  	naver_id_login.setState(state);
+	  	naver_id_login.setPopup();
+	  	naver_id_login.init_naver_id_login();
+	  </script>
 </body>
 
 </html>

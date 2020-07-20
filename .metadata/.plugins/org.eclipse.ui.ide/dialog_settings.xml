@@ -6,6 +6,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\course\JAVA\workspace"/>
+			<item value="D:\course\SPRING\WORKSPACE"/>
 			<item value="D:\course\JSP\WORKSPACE\JSPExam"/>
 			<item value="D:\course\JSP\WORKSPACE"/>
 		</list>
